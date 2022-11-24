@@ -4,12 +4,23 @@ Es una funcion que me retorna (return()) jsx
 Los componentes SIEMPRE empiezan con mayuscula
 CADA FUNCION PUEDE RETORNAR UN UNICO JSX 
 */
+
+
+/*
+
 const Titulo = () =>{
     return <h1>Titulo</h1>
 
 }
+*/
+
+
+
 //Ahi quedo la funcion definida pero falta "llamarla"
 //como la llamo?
+
+
+/*
 function App() {
     return (
         <div className="App">
@@ -17,6 +28,9 @@ function App() {
         </div>
     )
 }
+*/
+
+
 
 //COMO SE EXPORTA:
 // 1 - export default Titulo  (puede utilizarse una sola vez x archivo)
@@ -26,11 +40,20 @@ function App() {
 //1 - import Titulo from './assets/NavBar/NavBar2'
 //2 - import { Titulo } from '.assets/NavBar/Navbar2'
 
+
+
+
 //COMPONENTES CON HTML
+
+
+
+
+/*
 import React from 'react'
 
 const Formulario = () => {
     return (
+        
         <form action="">
             <input type="text" placeholder='Nombre' />
             <input type="text" placeholder='Apellido' />
@@ -40,7 +63,26 @@ const Formulario = () => {
 }
 
 export default Formulario
-
-/**
-
 */
+
+
+
+
+//PROPS
+function App() {
+    let tituloApp = 'Titulo de app'
+
+    return (
+    <Titulo titulo={tituloApp} subTitulo={'Subtitulo de app'} 
+    )
+}
+
+
+function Titulo (props){
+    return (
+        <div>
+        <h1>{ props.titulo}</h1>
+        <h2>{ props.subTitulo}</h2>
+        </div>
+    )
+}

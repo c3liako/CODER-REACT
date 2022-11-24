@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import ResponsiveAppBar from "./assets/NavBar"
+import ResponsiveAppBar from "./assets/NavBar/NavBar"
 
 function App() {
 
