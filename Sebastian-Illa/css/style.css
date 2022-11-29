@@ -1,0 +1,56 @@
+/* ---------------------------- PALETA DE COLORES --------------------------- */
+* {
+  margin: 0;
+  padding: 0; }
+
+.header {
+  background-color: #0055a5;
+  width: 100%; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: auto; }
+  .logo div {
+    margin-top: 10px; }
+
+.logoImg {
+  margin-right: 30px; }
+
+.titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 4rem;
+  color: #fee516; }
+
+.redes {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  align-content: flex-start;
+  flex-direction: row;
+  align-items: flex-start; }
+  .redes div {
+    margin: 10px; }
+
+/* ----------------------------------- NAV ---------------------------------- */
+ul,
+ol {
+  list-style: none; }
+
+.nav > li {
+  float: left; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0055a5;
+  font-size: 25px;
+  font-variant-caps: all-petite-caps; }
+  .nav li a {
+    background-color: #0055a5;
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: block;
+    transition: height; }

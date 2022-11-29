@@ -1,0 +1,82 @@
+@import "colores";
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: $azul;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+
+    div {
+        margin-top: 10px;
+    }
+}
+
+.logoImg {
+    margin-right: 30px;
+}
+
+.titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    color: $amarillo;
+}
+
+.redes {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+    align-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+
+    div {
+        margin: 10px;
+    }
+}
+
+/* ----------------------------------- NAV ---------------------------------- */
+
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+.nav>li {
+    float: left;
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: $azul;
+    font-size: 25px;
+    font-variant-caps: all-petite-caps;
+
+
+    li {
+        a {
+            background-color: $azul;
+            color: $blanco;
+            text-decoration: none;
+            padding: 8px 10px;
+            display: block;
+            transition: height;
+        }
+    }
+}
+
+
+

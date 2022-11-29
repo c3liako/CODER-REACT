@@ -69,6 +69,7 @@ export default Formulario
 
 
 //PROPS
+/*
 function App() {
     let tituloApp = 'Titulo de app'
 
@@ -86,3 +87,22 @@ function Titulo (props){
         </div>
     )
 }
+*/
+
+
+//ITEM
+/*
+const Item = () => {
+    return (
+        <div>
+            <h1>ITEM</h1>
+            <img src="" alt="" />
+        </div>
+    )
+}
+*/
+
+
+//PATRONES
+//1. COMPONENTE DE CLASE
+// Componentes funcionales de presentacion - muestran datos  
