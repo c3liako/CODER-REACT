@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 export const saludar = () => console.log('saludo')
 
 const ItemListContainer = ( { saludo = 'saludo' } ) => {
@@ -9,6 +9,7 @@ const ItemListContainer = ( { saludo = 'saludo' } ) => {
 //DESTRUCTURING DE UN ARRAY
 const [count, cambiarValorCount] = useState(0)
 //let contador = 0
+
 const [boleano, setBoleano] = useState (true)
 
 
@@ -24,6 +25,39 @@ const handleBool = () => {
 
 }
     console.log(boleano)
+
+
+
+//USE EFFECT
+
+//se ejecuta siempre en un nuevo render
+useEffect (()=>{
+    console.log('carga Segundo')
+
+    return() =>{
+        console.log('renderiza antes que  carga segundo')
+    }
+})
+
+//se ejecuta una sola vez despues del primer render
+useEffect (()=>{
+    console.log('carga Tercero')
+}, [])
+// [] array de dependecia vacio, es lo que hace que no vuelva a renderizar
+
+
+useEffect (()=>{
+    console.log('render solo cuando cambie boleano')
+}, [boleano])
+
+
+
+
+
+
+
+console.log('carga Primero')
+
     return (
     <section>
         ItemListContainer

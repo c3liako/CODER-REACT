@@ -4,7 +4,7 @@ import { useState } from 'react'
 /* ASSETS*/
 import '../css/style.css'
 import Header from "./assets/NavBar/Header"
-import ItemListContainer from '../Clases/ItemListContainer'
+import ItemListContainer2 from '../Clases/Promises'
 import NavBarBoostrap from './assets/NavBar/NavBarBoostrap'
 
 /* ESTILOS */
@@ -22,7 +22,8 @@ function App() {
 
     </div>*/   
     <div>
-      <ItemListContainer/>
+      <NavBarBoostrap/>
+      <ItemListContainer2/>
     </div>
     
   )
