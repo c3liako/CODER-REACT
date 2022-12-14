@@ -1,6 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import React from 'react'
 import {useState, useEffect} from 'react'
+import { gFetch } from './gFetch'
 export const saludo = () => console.log('saludo')
 
 
@@ -9,38 +10,35 @@ export const saludo = () => console.log('saludo')
 //acciones api -> resultado (asincronico)
 
 //const task = new Promise((res, rej) =>{})
-const products = [
-    {id:'1', name:'Producto1', cat:'Categoria1', stock:'00', precio: '100'},
-    {id:'2', name:'Producto2', cat:'Categoria2', stock:'05', precio: '200'},
-    {id:'3', name:'Producto3', cat:'Categoria3', stock:'10', precio: '300'},
-    {id:'4', name:'Producto4', cat:'Categoria4', stock:'15', precio: '400'}
-]
-const gFetch = (nro) => {
-    return new Promise((resolve, reject) => {
-    //acciones
-    const condition = true
-    setTimeout(() => {
-    if(condition){
-    resolve(products)
-}   else  {
-    reject('error')
-}
-}, 3000)
 
-})
-}
 
 const ItemListContainer2 = ( { saludo = 'saludo por defecto'}) => {
     const [products, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
-
+    const [pokemons, setPokemons] = useState([])
 
     useEffect(()=>{
-        gFetch() //simulacion de consulta a api
-.then(data  => setProduct(data))
-.catch(err => console.log(err))
-.finally(() => setLoading(false) ) 
+        //gFetch() //simulacion de consulta a api
+//.then(data  => setProduct(data))
+//.catch(err => console.log(err))
+//.finally(() => setLoading(false) ) 
+useFetch()
 }, [])
+
+const useFetch = async () =>{
+        try {
+        const resp = await fetch('https://pokeapi.co/api/v2/ability/?offset=20&limit=10')
+        const respJson = await resp.json()
+        setPokemons(respJson)
+        } catch (error){
+            console.log(error)
+        } 
+
+
+        //.then(resp=> resp.json())
+        //.then(data => console.log(data.results))
+        //.catch(err => console.log(err))
+}
 console.log(products)
         return(
         <section>
@@ -64,12 +62,14 @@ console.log(products)
                                                 <h4>stock</h4>
                                                 {`${products.stock}`}
                                             </div>
+                                            <button>Comprar</button>
+                                            <br />
+                                            <br />
                                             <br />
 
                                         </div>
                 )
             }
-            
         </section>
     )
 }

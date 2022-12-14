@@ -27,7 +27,7 @@ const handleBool = () => {
     console.log(boleano)
 
 
-
+/*
 //USE EFFECT
 
 //se ejecuta siempre en un nuevo render
@@ -57,7 +57,7 @@ useEffect (()=>{
 
 
 console.log('carga Primero')
-
+*/
     return (
     <section>
         ItemListContainer

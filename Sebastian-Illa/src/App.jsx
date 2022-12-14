@@ -6,6 +6,7 @@ import '../css/style.css'
 import Header from "./assets/NavBar/Header"
 import ItemListContainer2 from '../Clases/Promises'
 import NavBarBoostrap from './assets/NavBar/NavBarBoostrap'
+import ItemListContainer from '../Clases/ItemListContainer'
 
 /* ESTILOS */
 import './App.css'
@@ -23,6 +24,7 @@ function App() {
     </div>*/   
     <div>
       <NavBarBoostrap/>
+      <ItemListContainer/>
       <ItemListContainer2/>
     </div>
     
