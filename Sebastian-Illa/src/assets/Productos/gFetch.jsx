@@ -1,4 +1,4 @@
-const products = [
+const product = [
     {id:'1', name:'Producto1', cat:'Categoria1', stock:'00', precio: '100'},
     {id:'2', name:'Producto2', cat:'Categoria2', stock:'05', precio: '200'},
     {id:'3', name:'Producto3', cat:'Categoria3', stock:'10', precio: '300'},
@@ -10,7 +10,7 @@ export const gFetch = (nro) => {
     const condition = true
     setTimeout(() => {
     if(condition){
-    resolve(products)
+    resolve(product)
 }   else  {
     reject('error')
 }

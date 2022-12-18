@@ -1,12 +1,14 @@
 /** LIBRERIAS */
 import { useState } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 /* ASSETS*/
 import '../css/style.css'
-import Header from "./assets/NavBar/Header"
-import ItemListContainer2 from '../Clases/Promises'
+import ItemListContainer2 from './assets/Productos/ItemListContainer'
 import NavBarBoostrap from './assets/NavBar/NavBarBoostrap'
-import ItemListContainer from '../Clases/ItemListContainer'
+import CartContainer from './assets/Carrito/CartContainer'
+import ItemDetailContainer from './assets/Detalle/ItemDetailContainer'
+
 
 /* ESTILOS */
 import './App.css'
@@ -18,15 +20,18 @@ function App() {
 
 
   return (
-/*    <div className="App">
-    <Header/>
+  <BrowserRouter>
+    <NavBarBoostrap/>
 
-    </div>*/   
-    <div>
-      <NavBarBoostrap/>
-      <ItemListContainer/>
-      <ItemListContainer2/>
-    </div>
+      <Routes>
+        <Route path= '/' element ={ <ItemListContainer2/> }/>
+        <Route path = '/detalle/:productId' element ={ <ItemDetailContainer/> }/>
+        <Route path= '/cart' element ={ <CartContainer/> }/>
+
+        <Route path='*' element = {<Navigate to='/'/>} />
+      </Routes>
+
+  </BrowserRouter>
     
   )
 }
