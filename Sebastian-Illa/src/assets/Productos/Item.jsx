@@ -1,18 +1,30 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { gFetch } from './gFetch'
 
-function Item() {
+const Item = () => {
 const [product, setProduct] = useState([])
-const [loading, setLoading] = useState(true)    
+const [loading, setLoading] = useState(true)  
+const { id } = useParams ()
     useEffect(()=>{
 
-    gFetch()
+        if (id) {
+            gFetch()
+            .then(data  => setProduct(data.filter(prod => prod.categoria==id)))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false) )  
+            
+        } else {
+                gFetch()
     .then(data  => setProduct(data))
     .catch(err => console.log(err))
     .finally(() => setLoading(false) )     
-    },[])
+    
+        }
+},[id])
+
+
     
     return (
         

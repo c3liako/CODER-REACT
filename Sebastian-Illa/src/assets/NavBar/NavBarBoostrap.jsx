@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function NavBarBoostrap() {
   return (
@@ -13,8 +13,8 @@ function NavBarBoostrap() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Categoria 1</Nav.Link>
-            <Nav.Link href="#pricing">Categoria 2</Nav.Link>
+            <NavLink className='btn btn-outline-primary'  to="/category/Categoria1">Categoria 1</NavLink>
+            <NavLink className='btn btn-outline-primary' to="/category/Categoria2">Categoria 2</NavLink>
             {/*<NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
