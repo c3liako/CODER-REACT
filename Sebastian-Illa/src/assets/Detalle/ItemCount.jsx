@@ -15,8 +15,6 @@ const [count, cambiarValorCount] = useState(0)
 
     return (
     <section>
-        ItemListContainer
-        { }
         <p className='alert alert-danger'>{count}</p>
         <button className='btn btn-outline-primary' onClick={  contadorSuma }>+</button>
         <button className='btn btn-outline-primary' onClick={  contadorResta }>-</button>
