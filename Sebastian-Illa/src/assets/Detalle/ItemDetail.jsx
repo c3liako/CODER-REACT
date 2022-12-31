@@ -1,11 +1,25 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 import { gFetch } from '../Productos/gFetch'
+import { useCartContext } from '../../context/CartContext'
+
+
 
 const ItemDetail = ({product}) => {
+
+    const {cartList, agregarCarrito} = useCartContext()
+
+
     const onAdd = (cant) =>{
-        console.log(cant)
+        agregarCarrito({ ... product, cant})
     }
+
+    console.log(cartList)
+
+
+
+
+
     return (
         <div className='container border border-3 border-primary rounded'>
             <div className='row'>
