@@ -1,5 +1,5 @@
 const product = [
-    {id:'1', name:'Producto1', categoria:'Categoria1', stock:'00', precio: '100'},
+    {id:'1', name:'Producto1', categoria:'Categoria1', stock:'0', precio: '100'},
     {id:'2', name:'Producto2', categoria:'Categoria2', stock:'05', precio: '200'},
     {id:'3', name:'Producto3', categoria:'Categoria1', stock:'10', precio: '300'},
     {id:'4', name:'Producto4', categoria:'Categoria2', stock:'15', precio: '400'}
