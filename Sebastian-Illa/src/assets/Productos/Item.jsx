@@ -1,6 +1,7 @@
 import React from 'react'
+import { memo } from 'react'
 import { Link, useParams } from 'react-router-dom'
-const Item = ( { product }) => {
+const Item = memo(( { product }) => {
     return (
         <div>
             <div>
@@ -24,6 +25,6 @@ const Item = ( { product }) => {
             <br />
         </div>
     )
-}
+}) 
 
 export default Item

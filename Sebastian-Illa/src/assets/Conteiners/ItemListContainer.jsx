@@ -1,9 +1,15 @@
 
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
+import Loading from '../componentes/Loading'
 import { gFetch } from '../Productos/gFetch'
 import ItemList from '../Productos/ItemList'
+
+
+
+
 
 const ItemListContainer = () => {
 const [product, setProduct] = useState([])
@@ -27,14 +33,18 @@ const { id } = useParams ()
 },[id])
 
 
+
+
     
     return (
         
             <section>
             {loading?
-            <h2>Loading...</h2>
+            <Loading/>
             :
+
                 <ItemList product={product}/>
+                
             }
             
         </section>

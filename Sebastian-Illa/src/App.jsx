@@ -5,10 +5,9 @@ import { CartContext, CartContextProvider } from './context/CartContext'
 /* ASSETS*/
 import '../css/style.css'
 import NavBarBoostrap from './assets/NavBar/NavBarBoostrap'
-import CartContainer from './assets/Carrito/CartContainer'
 import ItemDetailContainer from './assets/Conteiners/ItemDetailContainer'
 import ItemListContainer from './assets/Conteiners/ItemListContainer'
-
+import CartContainer from './assets/Conteiners/CartContainer'
 /* ESTILOS */
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
