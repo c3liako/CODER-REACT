@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 import Loading from '../componentes/Loading'
 import { gFetch } from '../Productos/gFetch'
 import ItemList from '../Productos/ItemList'
-
+import {collection, doc, getDoc, getDocs, getFirestore} from 'firebase/firestore'
 
 
 
@@ -15,7 +15,7 @@ const ItemListContainer = () => {
 const [product, setProduct] = useState([])
 const [loading, setLoading] = useState(true)  
 const { id } = useParams ()
-    useEffect(()=>{
+/*    useEffect(()=>{
 
         if (id) {
             gFetch()
@@ -32,6 +32,21 @@ const { id } = useParams ()
         }
 },[id])
 
+*/
+
+useEffect(()=>{
+    const db = getFirestore()
+    const queryCollection = collection(db, 'product')
+
+
+
+
+    
+    getDocs(queryCollection)
+    .then(data => setProduct( data.docs.map(product => ({ id: product.id,...product.data()}) ) ) )
+            .catch(err => console.log())
+            .finally(()=> setLoading(false))   
+}, [id])
 
 
 
