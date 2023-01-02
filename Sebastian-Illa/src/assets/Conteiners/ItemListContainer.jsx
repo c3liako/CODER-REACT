@@ -4,56 +4,42 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Loading from '../componentes/Loading'
-import { gFetch } from '../Productos/gFetch'
 import ItemList from '../Productos/ItemList'
-import {collection, doc, getDoc, getDocs, getFirestore} from 'firebase/firestore'
+import {collection, doc, getDoc, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 
 
 
 const ItemListContainer = () => {
-const [product, setProduct] = useState([])
-const [loading, setLoading] = useState(true)  
-const { id } = useParams ()
-/*    useEffect(()=>{
+    const [product, setProduct] = useState({})
+    const [loading, setLoading] = useState(true)  
+    const { id } = useParams ()
 
+    useEffect(()=>{
+        const db = getFirestore()
+        const queryCollection = collection(db, 'product')
         if (id) {
-            gFetch()
-            .then(data  => setProduct(data.filter(prod => prod.categoria==id)))
+            const queryFiltrada =  query(queryCollection, where('categoria','==', id))
+
+            getDocs(queryFiltrada)
+            .then(data => setProduct( data.docs.map(product => ({ id: product.id,...product.data()}) ) ) )
             .catch(err => console.log(err))
-            .finally(() => setLoading(false) )  
-            
+            .finally(()=> setLoading(false))
         } else {
-                gFetch()
-    .then(data  => setProduct(data))
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false) )     
-    
-        }
-},[id])
-
-*/
-
-useEffect(()=>{
-    const db = getFirestore()
-    const queryCollection = collection(db, 'product')
-
-
-
-
-    
-    getDocs(queryCollection)
-    .then(data => setProduct( data.docs.map(product => ({ id: product.id,...product.data()}) ) ) )
+            getDocs(queryCollection)
+            .then(data => setProduct( data.docs.map(product => ({ id: product.id,...product.data()}) ) ) )
             .catch(err => console.log())
-            .finally(()=> setLoading(false))   
-}, [id])
+            .finally(()=> setLoading(false))  
+        }
+
+    }, [id])
 
 
 
     
     return (
         
-            <section>
+            <>
             {loading?
             <Loading/>
             :
@@ -62,7 +48,7 @@ useEffect(()=>{
                 
             }
             
-        </section>
+        </>
     )
 }
     export default ItemListContainer
