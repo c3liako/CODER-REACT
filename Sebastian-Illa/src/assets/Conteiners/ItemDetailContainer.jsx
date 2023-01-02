@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { gFetch } from '../Productos/gFetch'
 import ItemDetail from '../Detalle/ItemDetail'
+import Loading from '../componentes/Loading'
 
 const ItemDetailContainer = () => {
     const [ product, setProduct] = useState({}) 
@@ -18,7 +19,11 @@ const ItemDetailContainer = () => {
     })
 
     return (
-        <ItemDetail product={product} />
+        <>
+
+            {loading ? <Loading /> : <ItemDetail product={product}/>}
+            
+        </>
     )
 }
 

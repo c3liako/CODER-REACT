@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 const Loading = () => {
     useEffect   (() =>{
         return () =>{
-            console.log ('Dismounting')
         }
     })
     return(
