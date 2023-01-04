@@ -1,7 +1,7 @@
 /** LIBRERIAS */
 import { useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { CartContext, CartContextProvider } from './context/CartContext'
+import { CartContextProvider } from './context/CartContext'
 /* ASSETS*/
 import '../css/style.css'
 import NavBarBoostrap from './assets/NavBar/NavBarBoostrap'
