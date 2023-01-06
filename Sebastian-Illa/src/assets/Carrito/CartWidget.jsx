@@ -3,10 +3,10 @@ import { useCartContext } from '../../context/CartContext'
 
 export const Cartwidget = () => {
 
-    //const {cantidadTotal} = useCartContext()
+    const {cantidadTotal} = useCartContext()
         return (
     <div>
-        {/*cantidadTotal() !== 0 && cantidadTotal()*/}
+        {cantidadTotal() !== 0 && cantidadTotal()}
         <AiOutlineShoppingCart />
     </div>
     )
