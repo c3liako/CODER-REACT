@@ -15,15 +15,15 @@ const CartList = memo(({product}) => {
               >
                 <>
                 {cartList.map(product => <div key={product.id}> 
-                                  <img src="{product.img}" alt="Imagen del Producto" />
+                                  <img src={product.img} alt="Imagen del Producto" />
                                   <p>{product.name}</p> 
-                                  <p>price:{product.price}</p>
+                                  <p>Precio:{product.price}</p>
                                   <p>Cantidad:{product.quantity}</p>
                                   <button className='btn btn-danger' onClick={() => deleteItem(product.id)}> X </button>
                                 </div>
                                 )}
                 <h4>Valor Total : {totalPrice()}</h4>
-                <button className = "btn btn-danger" onClick = {emptyCart}> Vaciar Cart </button>
+                <button className = "btn btn-danger" onClick = {emptyCart}> Vaciar Carro </button>
                 <CartForm product={product}/>
                 </>
       </div>

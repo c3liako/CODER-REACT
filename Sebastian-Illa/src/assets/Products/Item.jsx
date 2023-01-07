@@ -9,7 +9,9 @@ const Item = memo(( { product }) => {
             <div>
                 <h2>{`${product.name}`}</h2>
             </div>
-
+            <div>
+            <img src={product.img} alt="Imagen del Producto" />
+            </div>
             <div>
                 <h4>PRECIO</h4>
                 {`$ ${product.price}`}
@@ -20,7 +22,7 @@ const Item = memo(( { product }) => {
                 {`${product.stock}`}
             </div>
             <Link to={`/detail/${product.id}`}>
-                <button>Detail</button>
+                <button>DETALLES</button>
             </Link>
             <br />
             <br />

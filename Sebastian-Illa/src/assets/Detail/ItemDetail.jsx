@@ -20,6 +20,7 @@ const ItemDetail = ({product}) => {
             <div className='row'>
                 <div className='col'>
                 <h3>Nombre: {product.name}</h3>
+                <img src={product.img} alt="Imagen del Producto" />
                 <h3>Categoria: {product.category}</h3>
                 <h4>Precio: {product.price}</h4>
                 <h4>Stock: {product.stock}</h4>
@@ -29,10 +30,10 @@ const ItemDetail = ({product}) => {
                     {isQuantity ?
                     <>
                     <Link to = '/cart' >
-                        <button className='btn btn-outline-primary'>Ir al Cart</button>
+                        <button className='btn btn-outline-primary'> Ir al Carro </button>
                     </Link>
                     <Link to = '/'>
-                        <button className='btn btn-outline-success'> Seguir Comprando</button>
+                        <button className='btn btn-outline-success'> Seguir Comprando </button>
                     </Link>
                     </>
                     

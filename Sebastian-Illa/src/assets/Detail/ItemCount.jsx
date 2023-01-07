@@ -32,7 +32,7 @@ const [count, cambiarValorCount,] = useState(initial)
                 <button className='btn btn-outline-primary' onClick={  Subtraction }>-</button>    
             </div>
             <div className='card-footer'>
-                <button className='btn btn-outline-success btn-block' onClick={ handleOnAdd }> Agregar al Cart </button>
+                <button className='btn btn-outline-success btn-block' onClick={ handleOnAdd }> Agregar al Carro </button>
             </div>
         </div>
     )

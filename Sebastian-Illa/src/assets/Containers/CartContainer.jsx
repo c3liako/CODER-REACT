@@ -18,7 +18,7 @@ const CartContainer = () => {
         <CartList product={product}/>
       :
       <>
-                <h2>Cart Vacio</h2>
+                <h2>Carro Vacio</h2>
                 <Link to = '/' className='btn btn-primary' >Volver a la Tienda</Link>
                 </>
       }
