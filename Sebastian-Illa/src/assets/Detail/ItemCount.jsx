@@ -7,13 +7,13 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
 
 const [count, cambiarValorCount,] = useState(initial)
 
-    const Suma = () => {
+    const Add = () => {
     if(count < stock) {
         cambiarValorCount(count+1)
         }
         
     }
-    const Resta = () => {
+    const Subtraction = () => {
         if(count > initial){
             cambiarValorCount(count-1)
     }
@@ -28,8 +28,8 @@ const [count, cambiarValorCount,] = useState(initial)
                 <label htmlFor="">{count}</label>
             </div>
             <div className='card-body'>
-                <button className='btn btn-outline-primary' onClick={  Suma }>+</button>
-                <button className='btn btn-outline-primary' onClick={  Resta }>-</button>    
+                <button className='btn btn-outline-primary' onClick={  Add }>+</button>
+                <button className='btn btn-outline-primary' onClick={  Subtraction }>-</button>    
             </div>
             <div className='card-footer'>
                 <button className='btn btn-outline-success btn-block' onClick={ handleOnAdd }> Agregar al Carrito </button>

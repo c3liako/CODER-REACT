@@ -11,16 +11,16 @@ const Item = memo(( { product }) => {
             </div>
 
             <div>
-                <h4>Precio</h4>
-                {`$ ${product.precio}`}
+                <h4>PRECIO</h4>
+                {`$ ${product.price}`}
             </div>
 
             <div>
-                <h4>stock</h4>
+                <h4>STOCK</h4>
                 {`${product.stock}`}
             </div>
-            <Link to={`/detalle/${product.id}`}>
-                <button>Detalle</button>
+            <Link to={`/detail/${product.id}`}>
+                <button>Detail</button>
             </Link>
             <br />
             <br />

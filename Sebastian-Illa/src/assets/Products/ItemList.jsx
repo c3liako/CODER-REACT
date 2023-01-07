@@ -8,7 +8,7 @@ const ItemList = memo(({product}) => {
                 display: 'flex',
                 flexDirection: 'row',
                 flexWrap: 'wrap',
-                justifyContent:'space-between'
+                justifyContent:'space-around'
                 }}
                 >
             {product.map( product =>  <Item key={product.id} product =  {product}/>)}

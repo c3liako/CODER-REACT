@@ -14,14 +14,14 @@ const CartContainer = () => {
     phone: ''
   })
 
-  const { cartList, vaciarCarrito, precioTotal, eliminarPorItem } = useCartContext()
+  const { cartList, emptyCart, totalPrice, deleteItem } = useCartContext()
 
   const addOrder = (e) => {
     e.preventDefault()
     const order = {}
     order.buyer = dataForm 
-    order.precio = precioTotal()
-    order.item = cartList.map (({id, precio, name}) => ({id, precio, name}))
+    order.price = totalPrice()
+    order.item = cartList.map (({id, price, name}) => ({id, price, name}))
   
     const db = getFirestore()
     const queryCollection = collection (db, 'orders')
@@ -30,7 +30,7 @@ const CartContainer = () => {
     addDoc(queryCollection, order)
     .then(resp => console.log(resp))
     .catch(err => console.log(err))
-    .finally(() => vaciarCarrito())
+    .finally(() => emptyCart())
     
   }
 const handleOnChange = (e) => {
@@ -49,16 +49,16 @@ const handleOnChange = (e) => {
       {cartList.length !== 0 ?
       <>
         {cartList.map(product => <div key={product.id}> 
-                                  <img src="{product.foto}" alt="Imagen del Producto" />
+                                  <img src="{product.img}" alt="Imagen del Producto" />
                                   <p>{product.name}</p> 
-                                  <p>Precio:{product.precio}</p>
-                                  <p>Cantidad:{product.cant}</p>
-                                  <button className='btn btn-danger' onClick={() => eliminarPorItem(product.id)}> X </button>
+                                  <p>price:{product.price}</p>
+                                  <p>Cantidad:{product.quantity}</p>
+                                  <button className='btn btn-danger' onClick={() => deleteItem(product.id)}> X </button>
                                 </div>
                                 )
         }
-                              <h4>Valor Total : {precioTotal()}</h4>
-                              <button className = "btn btn-danger" onClick = {vaciarCarrito}> Vaciar Carrito </button>
+                              <h4>Valor Total : {totalPrice()}</h4>
+                              <button className = "btn btn-danger" onClick = {emptyCart}> Vaciar Carrito </button>
 
                               <form onSubmit={addOrder}>
                               <input 

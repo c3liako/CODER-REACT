@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom'
 
 const ItemDetail = ({product}) => {
 
-    const [isCant, setIsCant] = useState(false)
-    const {agregarCarrito} = useCartContext()
-    const onAdd = (cant) =>{
-        agregarCarrito({ ...product, cant})
-        setIsCant(true)
+    const [isQuantity, setIsQuantity] = useState(false)
+    const {addToCart} = useCartContext()
+    const onAdd = (quantity) =>{
+        addToCart({ ...product, quantity})
+        setIsQuantity(true)
         
     }
 
@@ -20,13 +20,13 @@ const ItemDetail = ({product}) => {
             <div className='row'>
                 <div className='col'>
                 <h3>Nombre: {product.name}</h3>
-                <h3>Categoria: {product.cat}</h3>
-                <h4>Precio: {product.precio}</h4>
+                <h3>Categoria: {product.category}</h3>
+                <h4>Precio: {product.price}</h4>
                 <h4>Stock: {product.stock}</h4>
                 </div>
                 <div className='col'>
                     
-                    {isCant ?
+                    {isQuantity ?
                     <>
                     <Link to = '/cart' >
                         <button className='btn btn-outline-primary'>Ir al Carrito</button>
