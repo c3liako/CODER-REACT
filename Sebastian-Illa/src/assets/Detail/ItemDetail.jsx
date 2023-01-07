@@ -29,7 +29,7 @@ const ItemDetail = ({product}) => {
                     {isQuantity ?
                     <>
                     <Link to = '/cart' >
-                        <button className='btn btn-outline-primary'>Ir al Carrito</button>
+                        <button className='btn btn-outline-primary'>Ir al Cart</button>
                     </Link>
                     <Link to = '/'>
                         <button className='btn btn-outline-success'> Seguir Comprando</button>
