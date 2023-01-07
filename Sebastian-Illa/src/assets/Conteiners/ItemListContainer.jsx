@@ -1,11 +1,8 @@
-
-import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
-import React from 'react'
 import {useState, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import {useParams } from 'react-router-dom'
 import Loading from '../componentes/Loading'
 import ItemList from '../Productos/ItemList'
-import {collection, doc, getDoc, getDocs, getFirestore, query, where} from 'firebase/firestore'
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 
 

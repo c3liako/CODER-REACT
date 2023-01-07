@@ -12,16 +12,13 @@ export const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([])
     const agregarCarrito = (product) => {
         const idx = cartList.findIndex(prod => prod.id === product.id) 
-        
         if (idx !== -1) {
-
             cartList[idx].cant +=  product.cant
             setCartList( [ ...cartList ] ) 
         } else {
             setCartList([...cartList, product]) 
         }  
         
-
     }
 
 /* ------------------------------ PRECIO TOTAL ------------------------------ */

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import ItemCount from './ItemCount'
-import { gFetch } from '../Productos/gFetch'
 import { useCartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 
@@ -9,22 +8,12 @@ import { Link } from 'react-router-dom'
 const ItemDetail = ({product}) => {
 
     const [isCant, setIsCant] = useState(false)
-
     const {agregarCarrito} = useCartContext()
-
-
     const onAdd = (cant) =>{
         agregarCarrito({ ...product, cant})
         setIsCant(true)
         
     }
-
-
-
-
-
-
-
 
     return (
         <div className='container border border-3 border-primary rounded'>

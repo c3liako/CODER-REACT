@@ -83,11 +83,6 @@ const handleOnChange = (e) => {
                               placeholder='Ingrese su Email'
                               />
                               <button className='btn btn-outline-success'>Terminar Compra</button>
-
-
-
-
-
                               </form>
       </>
       :
