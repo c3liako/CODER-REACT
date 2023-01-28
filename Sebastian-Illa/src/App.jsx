@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { CartContextProvider } from './context/CartContext'
 
 /* ASSETS*/
-import '../css/style.css'
+import '../../css/style.css'
 import NavBarBoostrap from './assets/NavBar/NavBarBoostrap'
 import ItemDetailContainer from './assets/Containers/ItemDetailContainer'
 import ItemListContainer from './assets/Containers/ItemListContainer'

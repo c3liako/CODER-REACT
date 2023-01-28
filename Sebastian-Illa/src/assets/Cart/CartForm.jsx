@@ -1,7 +1,7 @@
 
 import { memo } from 'react'
 import { useState } from 'react'
-import { useCartContext } from '../../context/CartContext'
+import { useCartContext } from '../../../../context/CartContext'
 import { addDoc, collection, getFirestore,} from "firebase/firestore"
 
 const CartForm = memo(() => {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useCartContext } from '../../context/CartContext'
-import CartList from '../Cart/CartList'
+import { useCartContext } from '../../../../context/CartContext'
+import CartList from '../../Cart/CartList'
 
 
 
