@@ -1,5 +1,5 @@
 import { memo, Link } from 'react'
-import { useCartContext } from '../../../../context/CartContext'
+import { useCartContext } from '../../context/CartContext'
 import CartForm from './CartForm'
 
 const CartList = memo(({product}) => {
