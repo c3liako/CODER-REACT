@@ -3,7 +3,7 @@
 import { useState, memo } from 'react'
 import { useCartContext } from '../../context/CartContext'
 import { addDoc, collection, getFirestore,} from "firebase/firestore"
-import { useNavigate, Navigate } from 'react-router-dom'
+
 
 const CartForm = memo(() => {
     const [dataForm, SetFormData] = useState({
@@ -12,22 +12,22 @@ const CartForm = memo(() => {
     const { cartList, emptyCart, totalPrice} = useCartContext()
 
     const addOrder = (e) => {
-    e.preventDefault()
-    const order = {}
-    order.buyer = dataForm 
-    order.price = totalPrice()
-    order.item = cartList.map (({id, price, name}) => ({id, price, name}))
-    
-    
-    const db = getFirestore()
-    const queryCollection = collection (db, 'orders')
-    
-    
+        e.preventDefault()
+        const order = {}
+        order.buyer = dataForm 
+        order.price = totalPrice()
+        order.item = cartList.map (({id, price, name}) => ({id, price, name}))
+        
+        
+        const db = getFirestore()
+        const queryCollection = collection (db, 'orders')
+        
+        
 
-    addDoc(queryCollection, order,)
-    .then(resp => console.log(resp))
-    .catch(err => console.log(err))
-    .finally(() => emptyCart())
+        addDoc(queryCollection, order,)
+            .then(resp => alert(resp.id))
+            .catch(err => console.log(err))
+            .finally(() => emptyCart())
     
     
     }
