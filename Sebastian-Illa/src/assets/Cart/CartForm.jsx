@@ -6,9 +6,6 @@ import { addDoc, collection, getFirestore,} from "firebase/firestore"
 
 const CartForm = memo(() => {
     const [dataForm, SetFormData] = useState({
-    name: '',
-    email: '',
-    phone: ''
     })
 
     const { cartList, emptyCart, totalPrice} = useCartContext()
@@ -20,14 +17,17 @@ const CartForm = memo(() => {
     order.price = totalPrice()
     order.item = cartList.map (({id, price, name}) => ({id, price, name}))
     
+    
     const db = getFirestore()
     const queryCollection = collection (db, 'orders')
     
+    
 
-    addDoc(queryCollection, order)
+    addDoc(queryCollection, order,)
     .then(resp => console.log(resp))
     .catch(err => console.log(err))
     .finally(() => emptyCart())
+    
     
     }
 const handleOnChange = (e) => {
@@ -50,29 +50,46 @@ const handleOnChange = (e) => {
                     
 
 
-            <form onSubmit={addOrder}>
-            <input 
-            type="text"
-            onChange={handleOnChange}
-            name='name'
-            value={dataForm.value}
-            placeholder='Ingrese su Nombre'
-            />
-            <input 
-            type="text"
-            onChange={handleOnChange}
-            name='phone'
-            value={dataForm.phone}
-            placeholder='Ingrese su Telefono'
-            />
-            <input 
-            type="text"
-            onChange={handleOnChange}
-            name='email'
-            value={dataForm.email}
-            placeholder='Ingrese su Email'
-            />
-            <button className='btn btn-outline-success'>Terminar Compra</button>
+<form onSubmit={addOrder}>
+<div className="card input-group p-4 mb-5 ">
+    <h5>Completa el formulario para finalizar tu compra.</h5>
+    <div className="m-3">
+    <input
+        className="form-control"
+        type="text"
+        onChange={handleOnChange}
+        name="name"
+        value={dataForm.name}
+        placeholder="Tu nombre completo"
+        required
+    />
+    </div>
+    <div className="m-3">
+    <input
+        className="form-control"
+        type="text"
+        onChange={handleOnChange}
+        name="phone"
+        value={dataForm.phone}
+        placeholder="Ingresa tu numero de telefono"
+        required
+    />
+    </div>
+    <div className="m-3">
+    <input
+        className="form-control"
+        type="text"
+        onChange={handleOnChange}
+        name="email"
+        value={dataForm.email}
+        placeholder="tucorreo@ejemplo.com"
+        required
+    />
+    </div>
+    <button className="btn bg-info p-3 m-3 fw-bolder">
+    Finalizar Compra
+    </button>
+</div>
 </form>
         </div>
     )

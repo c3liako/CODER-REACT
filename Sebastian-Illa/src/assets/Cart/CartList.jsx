@@ -2,6 +2,7 @@ import { memo, Link } from 'react'
 import { useCartContext } from '../../context/CartContext'
 import CartForm from './CartForm'
 
+
 const CartList = memo(({product}) => {
   const { cartList, deleteItem, totalPrice, emptyCart } = useCartContext()
   return (
